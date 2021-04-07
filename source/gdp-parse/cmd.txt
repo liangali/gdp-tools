@@ -24,3 +24,344 @@
 00000000, 00000000, 12000002, 00012868, 00000000, 00000000, 10000002, 00000000, 
 00000000, 000000ff, 00000000, 13004082, 00000000, 00000000, 00000001, 00000000, 
 05000000, 
+
+# MFX_PIPE_MODE_SELECT_CMD
+cmd = '70000003, 00020100, 00000000, 00000000, 00000000'
+
+    struct MFX_PIPE_MODE_SELECT_CMD
+    {
+        union
+        {
+            //!< DWORD 0
+            struct
+            {
+                uint32_t                 DwordLength                                      : __CODEGEN_BITFIELD( 0, 11)    ; //!< DWORD_LENGTH
+                uint32_t                 Reserved12                                       : __CODEGEN_BITFIELD(12, 15)    ; //!< Reserved
+                uint32_t                 Subopb                                           : __CODEGEN_BITFIELD(16, 20)    ; //!< SUBOPB
+                uint32_t                 Subopa                                           : __CODEGEN_BITFIELD(21, 23)    ; //!< SUBOPA
+                uint32_t                 Opcode                                           : __CODEGEN_BITFIELD(24, 26)    ; //!< OPCODE
+                uint32_t                 Pipeline                                         : __CODEGEN_BITFIELD(27, 28)    ; //!< PIPELINE
+                uint32_t                 CommandType                                      : __CODEGEN_BITFIELD(29, 31)    ; //!< COMMAND_TYPE
+            };
+            uint32_t                     Value;
+        } DW0;
+        union
+        {
+            //!< DWORD 1
+            struct
+            {
+                uint32_t                 StandardSelect                                   : __CODEGEN_BITFIELD( 0,  3)    ; //!< STANDARD_SELECT
+                uint32_t                 CodecSelect                                      : __CODEGEN_BITFIELD( 4,  4)    ; //!< CODEC_SELECT
+                uint32_t                 StitchMode                                       : __CODEGEN_BITFIELD( 5,  5)    ; //!< STITCH_MODE
+                uint32_t                 FrameStatisticsStreamoutEnable                   : __CODEGEN_BITFIELD( 6,  6)    ; //!< FRAME_STATISTICS_STREAMOUT_ENABLE
+                uint32_t                 ScaledSurfaceEnable                              : __CODEGEN_BITFIELD( 7,  7)    ; //!< SCALED_SURFACE_ENABLE
+                uint32_t                 PreDeblockingOutputEnablePredeblockoutenable     : __CODEGEN_BITFIELD( 8,  8)    ; //!< PRE_DEBLOCKING_OUTPUT_ENABLE_PREDEBLOCKOUTENABLE
+                uint32_t                 PostDeblockingOutputEnablePostdeblockoutenable   : __CODEGEN_BITFIELD( 9,  9)    ; //!< POST_DEBLOCKING_OUTPUT_ENABLE_POSTDEBLOCKOUTENABLE
+                uint32_t                 StreamOutEnable                                  : __CODEGEN_BITFIELD(10, 10)    ; //!< STREAM_OUT_ENABLE
+                uint32_t                 PicErrorStatusReportEnable                       : __CODEGEN_BITFIELD(11, 11)    ; //!< PIC_ERRORSTATUS_REPORT_ENABLE
+                uint32_t                 DeblockerStreamOutEnable                         : __CODEGEN_BITFIELD(12, 12)    ; //!< DEBLOCKER_STREAM_OUT_ENABLE
+                uint32_t                 VdencMode                                        : __CODEGEN_BITFIELD(13, 13)    ; //!< VDENC_MODE
+                uint32_t                 StandaloneVdencModeEnable                        : __CODEGEN_BITFIELD(14, 14)    ; //!< STANDALONE_VDENC_MODE_ENABLE
+                uint32_t                 DecoderModeSelect                                : __CODEGEN_BITFIELD(15, 16)    ; //!< DECODER_MODE_SELECT
+                uint32_t                 DecoderShortFormatMode                           : __CODEGEN_BITFIELD(17, 17)    ; //!< DECODER_SHORT_FORMAT_MODE
+                uint32_t                 ExtendedStreamOutEnable                          : __CODEGEN_BITFIELD(18, 18)    ; //!< Extended stream out enable
+                uint32_t                 Reserved51                                       : __CODEGEN_BITFIELD(19, 31)    ; //!< Reserved
+            };
+            uint32_t                     Value;
+        } DW1;
+        union
+        {
+            //!< DWORD 2
+            struct
+            {
+                uint32_t                 Reserved64                                       : __CODEGEN_BITFIELD( 0,  2)    ; //!< Reserved
+                uint32_t                 VdsIldbCalculation                               : __CODEGEN_BITFIELD( 3,  3)    ; //!< VDS_ILDB_CALCULATION
+                uint32_t                 Reserved68                                       : __CODEGEN_BITFIELD( 4,  5)    ; //!< Reserved
+                uint32_t                 ClockGateEnableAtSliceLevel                      : __CODEGEN_BITFIELD( 6,  6)    ; //!< CLOCK_GATE_ENABLE_AT_SLICE_LEVEL
+                uint32_t                 Reserved71                                       : __CODEGEN_BITFIELD( 7,  9)    ; //!< Reserved
+                uint32_t                 MpcPref08X8DisableFlagDefault0                   : __CODEGEN_BITFIELD(10, 10)    ; //!< MPC_PREF08X8_DISABLE_FLAG_DEFAULT_0
+                uint32_t                 Reserved75                                       : __CODEGEN_BITFIELD(11, 13)    ; //!< Reserved
+                uint32_t                 Vlf720IOddHeightInVc1Mode                        : __CODEGEN_BITFIELD(14, 14)    ; //!< VLF_720I_ODD_HEIGHT_IN_VC1_MODE_
+                uint32_t                 Reserved79                                       : __CODEGEN_BITFIELD(15, 26)    ; //!< Reserved
+                uint32_t                 VmbSvcTlbDummyFetchDisableForPerformance         : __CODEGEN_BITFIELD(27, 27)    ; //!< VMB_SVC_TLB_DUMMY_FETCH_DISABLE_FOR_PERFORMANCE
+                uint32_t                 VmbSvcMvReplicationFor8X8EnableErrorHandling     : __CODEGEN_BITFIELD(28, 28)    ; //!< VMB_SVC_MV_REPLICATION_FOR_8X8_ENABLE_ERROR_HANDLING
+                uint32_t                 Reserved93                                       : __CODEGEN_BITFIELD(29, 31)    ; //!< Reserved
+            };
+            uint32_t                     Value;
+        } DW2;
+        union
+        {
+            //!< DWORD 3
+            struct
+            {
+                uint32_t                 PicStatusErrorReportId                                                           ; //!< PIC_STATUSERROR_REPORT_ID
+            };
+            uint32_t                     Value;
+        } DW3;
+        union
+        {
+            //!< DWORD 4
+            struct
+            {
+                uint32_t                 Reserved128                                                                      ; //!< Reserved
+            };
+            uint32_t                     Value;
+        } DW4;
+
+        //! \name Local enumerations
+
+        enum SUBOPB
+        {
+            SUBOPB_MFXPIPEMODESELECT                                         = 0, //!< No additional details
+        };
+
+        enum SUBOPA
+        {
+            SUBOPA_UNNAMED0                                                  = 0, //!< No additional details
+        };
+
+        enum OPCODE
+        {
+            OPCODE_MFXCOMMONSTATE                                            = 0, //!< No additional details
+        };
+
+        enum PIPELINE
+        {
+            PIPELINE_MFXCOMMON                                               = 2, //!< No additional details
+        };
+
+        enum COMMAND_TYPE
+        {
+            COMMAND_TYPE_PARALLELVIDEOPIPE                                   = 3, //!< No additional details
+        };
+
+        enum STANDARD_SELECT
+        {
+            STANDARD_SELECT_MPEG2                                            = 0, //!< No additional details
+            STANDARD_SELECT_VC1                                              = 1, //!< No additional details
+            STANDARD_SELECT_AVC                                              = 2, //!< Covers both AVC and MVC
+            STANDARD_SELECT_JPEG                                             = 3, //!< No additional details
+            STANDARD_SELECT_SVC                                              = 4, //!< No additional details
+            STANDARD_SELECT_VP8                                              = 5, //!< Decoder starting from BDW, Encoder starting from CHV
+            STANDARD_SELECT_UVLD                                             = 15, //!< SW decoder w/ embedded micro-controller and co-processor
+        };
+
+        enum CODEC_SELECT
+        {
+            CODEC_SELECT_DECODE                                              = 0, //!< No additional details
+            CODEC_SELECT_ENCODE                                              = 1, //!< Valid only if StandardSel is AVC, MPEG2 and SVC)
+        };
+
+        enum STITCH_MODE
+        {
+            STITCH_MODE_NOTINSTITCHMODE                                      = 0, //!< No additional details
+            STITCH_MODE_INTHESPECIALSTITCHMODE                               = 1, //!< This mode can be used for any Codec as long as bitfield conditions are met.
+        };
+
+        //! \brief FRAME_STATISTICS_STREAMOUT_ENABLE
+        //! \details
+        //!     This field controls the frame level statistics streamout from the PAK. 
+        //!                         <p><b>Note</b>: This field needs to be always "Enabled" in VD_Enc
+        //!     mode. In case of non-VDEnc mode,
+        //!                             this can be used to control the frame statistics output from the
+        //!     PAK.</p>
+        enum FRAME_STATISTICS_STREAMOUT_ENABLE
+        {
+            FRAME_STATISTICS_STREAMOUT_ENABLE_DISABLE                        = 0, //!< No additional details
+            FRAME_STATISTICS_STREAMOUT_ENABLE_ENABLE                         = 1, //!< No additional details
+        };
+
+        //! \brief SCALED_SURFACE_ENABLE
+        //! \details
+        //!     This field indicates if the scaled surface is enabled. This field
+        //!                         enables the 4x HME downscalar of the reconstructed image. Only
+        //!     supported for AVC and VP8 formats.
+        enum SCALED_SURFACE_ENABLE
+        {
+            SCALED_SURFACE_ENABLE_DISABLE                                    = 0, //!< No additional details
+            SCALED_SURFACE_ENABLE_ENABLE                                     = 1, //!< No additional details
+        };
+
+        //! \brief PRE_DEBLOCKING_OUTPUT_ENABLE_PREDEBLOCKOUTENABLE
+        //! \details
+        //!     This field controls the output write for the reconstructed pixels BEFORE
+        //!     the deblocking filter.
+        enum PRE_DEBLOCKING_OUTPUT_ENABLE_PREDEBLOCKOUTENABLE
+        {
+            PRE_DEBLOCKING_OUTPUT_ENABLE_PREDEBLOCKOUTENABLE_DISABLE         = 0, //!< No additional details
+            PRE_DEBLOCKING_OUTPUT_ENABLE_PREDEBLOCKOUTENABLE_ENABLE          = 1, //!< No additional details
+        };
+
+        //! \brief POST_DEBLOCKING_OUTPUT_ENABLE_POSTDEBLOCKOUTENABLE
+        //! \details
+        //!     This field controls the output write for the reconstructed pixels AFTER
+        //!     the deblocking filter.In MPEG2 decoding mode, if this is enabled, VC1
+        //!     deblocking filter is used.
+        enum POST_DEBLOCKING_OUTPUT_ENABLE_POSTDEBLOCKOUTENABLE
+        {
+            POST_DEBLOCKING_OUTPUT_ENABLE_POSTDEBLOCKOUTENABLE_DISABLE       = 0, //!< No additional details
+            POST_DEBLOCKING_OUTPUT_ENABLE_POSTDEBLOCKOUTENABLE_ENABLE        = 1, //!< No additional details
+        };
+
+        //! \brief STREAM_OUT_ENABLE
+        //! \details
+        //!     This field controls whether the macroblock parameter stream-out is
+        //!     enabled during VLD decoding for transcoding purpose.
+        enum STREAM_OUT_ENABLE
+        {
+            STREAM_OUT_ENABLE_DISABLE                                        = 0, //!< No additional details
+            STREAM_OUT_ENABLE_ENABLE                                         = 1, //!< No additional details
+        };
+
+        //! \brief PIC_ERRORSTATUS_REPORT_ENABLE
+        //! \details
+        //!     <p>This field control whether the error/status reporting is enable or
+        //!     not.0: Disable1: EnableIn decoder modes: Error reporting is written out
+        //!     once per frame. The Error Report frame ID listed in DW3 along with the
+        //!     VLD/IT error status bits are packed into one cache and written to the
+        //!     "Decoded Picture Error/Status Buffer address" listed in the
+        //!     MFX_PIPE_BUF_ADDR_STATE Command. Note: driver shall program different
+        //!     error buffer addresses between pictrues; otherwise, hardware might
+        //!     overwrite previous written data if driver does not read it fast
+        //!     enough.In encoder modes: Not used</p>
+        //!     <p>Please refer to "Media VDBOX -&gt; Video Codec -&gt; Other Codec
+        //!     Functions -&gt; MFX Error Handling -&gt; Decoder" session for the output
+        //!     format.</p>
+        enum PIC_ERRORSTATUS_REPORT_ENABLE
+        {
+            PIC_ERRORSTATUS_REPORT_ENABLE_DISABLE                            = 0, //!< No additional details
+            PIC_ERRORSTATUS_REPORT_ENABLE_ENABLE                             = 1, //!< No additional details
+        };
+
+        //! \brief DEBLOCKER_STREAM_OUT_ENABLE
+        //! \details
+        //!     This field indicates if Deblocker information is going to be streamout
+        //!     during VLD decoding.
+        //!                         For AVC, it is needed to enable the deblocker streamout as the AVC
+        //!     Disable_DLKFilterIdc is a slice level parameters.  Driver needs to
+        //!     determine ahead of time if at least one slice of the current frame/ has
+        //!     deblocker ON.  
+        //!                         For SVC, there are two deblocking control streamout buffers
+        //!     (specified in MFX_BUF_ADDR State Command).  This field is still
+        //!     associated with the slice level SVC Disable.DLK_Filter_Idc.
+        enum DEBLOCKER_STREAM_OUT_ENABLE
+        {
+            DEBLOCKER_STREAM_OUT_ENABLE_DISABLE                              = 0, //!< Disable streamout of deblocking control information for standalone deblocker operation.It needs other fields to determine one or two SVC deblocking surface streamout (Post Deblocking Output Enable, Pre Deblocking Output Enable, interlayer idc and regular deblock idc).
+            DEBLOCKER_STREAM_OUT_ENABLE_ENABLE                               = 1, //!< No additional details
+        };
+
+        //! \brief VDENC_MODE
+        //! \details
+        //!     This field indicates if PAK is working in legacy MBEnc mode or the VDEnc
+        //!     mode.
+        enum VDENC_MODE
+        {
+            VDENC_MODE_MBENCMODE                                             = 0, //!< PAK is working in legacy mode
+            VDENC_MODE_VDENCMODE                                             = 1, //!< PAK is working in VDEnc mode
+        };
+
+        //! \brief STANDALONE_VDENC_MODE_ENABLE
+        //! \details
+        //!     This field indicates to PAK if this is standalone VDEnc mode. This is
+        //!     primarily a  validation mode.
+        enum STANDALONE_VDENC_MODE_ENABLE
+        {
+            STANDALONE_VDENC_MODE_ENABLE_VDENCPAK                            = 0, //!< No additional details
+            STANDALONE_VDENC_MODE_ENABLE_PAKONLY                             = 1, //!< No additional details
+        };
+
+        //! \brief DECODER_MODE_SELECT
+        //! \details
+        //!     Each coding standard supports two entry points: VLD entry point and IT
+        //!     (IDCT) entry point. This field selects which one is in use.This field is
+        //!     only valid if Codec Select is 0 (decoder).
+        enum DECODER_MODE_SELECT
+        {
+            DECODER_MODE_SELECT_VLDMODE                                      = 0, //!< All codec minimum must support this mode Configure the MFD Engine for VLD ModeNote: All codec minimum must support this mode
+            DECODER_MODE_SELECT_ITMODE                                       = 1, //!< Configure the MFD Engine for IT ModeNote: Only VC1 and MPEG2 support this mode
+            DECODER_MODE_SELECT_DEBLOCKERMODE                                = 2, //!< Configure the MFD Engine for Standalone Deblocker Mode. Require streamout AVC edge control information from preceeding decoding pass.Note: [HSW, EXCLUDE(HSW:GT3:A, HSW:GT3:B, HSW:GT2:B)] Only AVC, MPEG2 and SVC are supported.
+            DECODER_MODE_SELECT_INTERLAYERMODE                               = 3, //!< Configure the MFX Engine for standalone SVC interlayer upsampling for motion info, residual and reconstructed pixel. Require information being streamout from the preceding encoding and decoding pass of a reference layer.>
+        };
+
+        //! \brief DECODER_SHORT_FORMAT_MODE
+        //! \details
+        //!     For IT mode, this bit must be 0.
+        enum DECODER_SHORT_FORMAT_MODE
+        {
+            DECODER_SHORT_FORMAT_MODE_SHORTFORMATDRIVERINTERFACE             = 0, //!< AVC/VC1/MVC/SVC/VP8 Short Format Mode is in useNote: There is no Short Format for SVC and VP8 yet, so this field must be set to 1 for SVC and VP8.
+            DECODER_SHORT_FORMAT_MODE_LONGFORMATDRIVERINTERFACE              = 1, //!< AVC/VC1/MVC/SVC/VP8 Long Format Mode is in use.
+        };
+
+        //! \brief VDS_ILDB_CALCULATION
+        //! \details
+        //!     This bit forces all MB into INTRA MBs before doing ILDB control
+        //!     generation in VDS.
+        enum VDS_ILDB_CALCULATION
+        {
+            VDS_ILDB_CALCULATION_DISABLE                                     = 0, //!< Use original definition for ILDB calculation.
+            VDS_ILDB_CALCULATION_ENABLE                                      = 1, //!< Force neighbor Intra MB = 1 on ILDB BS calculation.
+        };
+
+        //! \brief CLOCK_GATE_ENABLE_AT_SLICE_LEVEL
+        //! \details
+        //!     BitFieldDesc:
+        enum CLOCK_GATE_ENABLE_AT_SLICE_LEVEL
+        {
+            CLOCK_GATE_ENABLE_AT_SLICE_LEVEL_DISABLE                         = 0, //!< Disable Slice-level Clock gating, Unit-level Clock gating will apply
+            CLOCK_GATE_ENABLE_AT_SLICE_LEVEL_ENABLE                          = 1, //!< Enable Slice-level Clock gating, overrides any Unit level Clock gating
+        };
+
+        enum MPC_PREF08X8_DISABLE_FLAG_DEFAULT_0
+        {
+            MPC_PREF08X8_DISABLE_FLAG_DEFAULT_0_DISABLE                      = 0, //!< No additional details
+            MPC_PREF08X8_DISABLE_FLAG_DEFAULT_0_ENABLE                       = 1, //!< No additional details
+        };
+
+        //! \brief VLF_720I_ODD_HEIGHT_IN_VC1_MODE_
+        //! \details
+        //!     This bit indicates VLF write out VC1 picture with odd height (in MBs).
+        enum VLF_720I_ODD_HEIGHT_IN_VC1_MODE_
+        {
+            VLF_720I_ODD_HEIGHT_IN_VC1_MODE_DISABLE                          = 0, //!< No additional details
+            VLF_720I_ODD_HEIGHT_IN_VC1_MODE_ENABLE                           = 1, //!< 720i Enable
+        };
+
+        //! \brief VMB_SVC_TLB_DUMMY_FETCH_DISABLE_FOR_PERFORMANCE
+        //! \details
+        //!     This bit disables TLB dummy fetch in SVC mode in VMB.
+        enum VMB_SVC_TLB_DUMMY_FETCH_DISABLE_FOR_PERFORMANCE
+        {
+            VMB_SVC_TLB_DUMMY_FETCH_DISABLE_FOR_PERFORMANCE_ENABLE           = 0, //!< Enable VMB TLB Dummy Fetch for Performance
+            VMB_SVC_TLB_DUMMY_FETCH_DISABLE_FOR_PERFORMANCE_DISABLE          = 1, //!< Disable VMB TLB Dummy Fetch
+        };
+
+        //! \brief VMB_SVC_MV_REPLICATION_FOR_8X8_ENABLE_ERROR_HANDLING
+        //! \details
+        //!     This bit enables Motion Vector replication on 8x8 level during SVC mode
+        //!     for error handling.
+        enum VMB_SVC_MV_REPLICATION_FOR_8X8_ENABLE_ERROR_HANDLING
+        {
+            VMB_SVC_MV_REPLICATION_FOR_8X8_ENABLE_ERROR_HANDLING_DISABLE     = 0, //!< Disable MV 8x8 replication in SVC mode
+            VMB_SVC_MV_REPLICATION_FOR_8X8_ENABLE_ERROR_HANDLING_ENABLE      = 1, //!< Enable MV 8x8 Replication in SVC Mode
+        };
+
+        //! \brief PIC_STATUSERROR_REPORT_ID
+        //! \details
+        //!     In decoder modes: Error reporting is written out once per frame. This
+        //!     field along with the VLD error status bits are packed into one cache and
+        //!     written to the memory location specified by "Decoded Picture
+        //!     Error/Status Buffer address" listed in the MFX_PIPE_BUF_ADDR_STATE
+        //!     Command.
+        enum PIC_STATUSERROR_REPORT_ID
+        {
+            PIC_STATUSERROR_REPORT_ID_32_BITUNSIGNED                         = 0, //!< Unique ID Number
+        };
+
+        //! \name Initializations
+
+        //! \brief Explicit member initialization function
+        MFX_PIPE_MODE_SELECT_CMD();
+
+        static const size_t dwSize = 5;
+        static const size_t byteSize = 20;
+    };
