@@ -24,23 +24,23 @@ cmd = '70000003, 00020100, 00000000, 00000000, 00000000'
     # uint32_t                 Reserved51                                       : __CODEGEN_BITFIELD(19, 31)    ; //!< Reserved
 # };
 
-a = BitArray('0x00020100')
-StandardSelect = a[0:3]
-CodecSelect = a[4:4]
-StitchMode = a[5:5]
-FrameStatisticsStreamoutEnable = a[6:6]
-ScaledSurfaceEnable = a[7:7]
-PreDeblockingOutputEnablePredeblockoutenable = a[8:8]
-PostDeblockingOutputEnablePostdeblockoutenable = a[9:9]
-StreamOutEnable = a[10:10]
-PicErrorStatusReportEnable = a[11:11]
-DeblockerStreamOutEnable = a[12:12]
-VdencMode = a[13:13]
-StandaloneVdencModeEnable = a[14:14]
-DecoderModeSelect = a[15:16]
-DecoderShortFormatMode = a[17:17]
-ExtendedStreamOutEnable = a[18:18]
-Reserved51 = a[19:31]
+a = BitArray(uintle=0x00020100, length=32)
+StandardSelect = a[0:4]
+CodecSelect = a[4:5]
+StitchMode = a[5:6]
+FrameStatisticsStreamoutEnable = a[6:7]
+ScaledSurfaceEnable = a[7:8]
+PreDeblockingOutputEnablePredeblockoutenable = a[8:9]
+PostDeblockingOutputEnablePostdeblockoutenable = a[9:10]
+StreamOutEnable = a[10:11]
+PicErrorStatusReportEnable = a[11:12]
+DeblockerStreamOutEnable = a[12:13]
+VdencMode = a[13:14]
+StandaloneVdencModeEnable = a[14:15]
+DecoderModeSelect = a[15:17]
+DecoderShortFormatMode = a[17:18]
+ExtendedStreamOutEnable = a[18:19]
+Reserved51 = a[19:32]
 
 print(StandardSelect);
 print(CodecSelect);
