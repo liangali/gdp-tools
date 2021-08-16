@@ -1,5 +1,14 @@
 from bitstring import BitArray, BitStream
 
+import numpy as np 
+
+cmd = np.fromfile('cmdbuf.bin', dtype=np.uint32)
+
+for d in cmd:
+    print('%08x'%d)
+
+print('done')
+
 # MFX_PIPE_MODE_SELECT_CMD
 cmd = '70000003, 00020100, 00000000, 00000000, 00000000'
 
