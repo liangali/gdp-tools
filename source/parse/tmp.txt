@@ -1,0 +1,69 @@
+	struct MFX_QM_STATE_CMD {
+		union {
+			struct {
+				uint32_t           DwordLength:12;       /*     0: 0  4 */
+				uint32_t           Reserved12:4;         /*     0:12  4 */
+				uint32_t           SubopcodeB:5;         /*     0:16  4 */
+				uint32_t           SubopcodeA:3;         /*     0:21  4 */
+				uint32_t           MediaCommandOpcode:3; /*     0:24  4 */
+				uint32_t           Pipeline:2;           /*     0:27  4 */
+				uint32_t           CommandType:3;        /*     0:29  4 */
+			};                                               /*     0     4 */
+			uint32_t                   Value;                /*     0     4 */
+		};
+
+		union {
+			struct {
+				uint32_t           Avc:2;                /*     0: 0  4 */
+				uint32_t           Reserved34:30;        /*     0: 2  4 */
+			} Obj0;                                          /*     0     4 */
+			struct {
+				uint32_t           Mpeg2:2;              /*     0: 0  4 */
+				uint32_t           Reserved34:30;        /*     0: 2  4 */
+			} Obj1;                                          /*     0     4 */
+			struct {
+				uint32_t           Jpeg:2;               /*     0: 0  4 */
+				uint32_t           Reserved34:30;        /*     0: 2  4 */
+			} Obj2;                                          /*     0     4 */
+			uint32_t                   Value;                /*     0     4 */
+		};
+
+		union {
+			struct {
+				uint32_t   DwordLength:12;       /*     0: 0  4 */
+				uint32_t   Reserved12:4;         /*     0:12  4 */
+				uint32_t   SubopcodeB:5;         /*     0:16  4 */
+				uint32_t   SubopcodeA:3;         /*     0:21  4 */
+				uint32_t   MediaCommandOpcode:3; /*     0:24  4 */
+				uint32_t   Pipeline:2;           /*     0:27  4 */
+				uint32_t   CommandType:3;        /*     0:29  4 */
+			};                                       /*     0     4 */
+			uint32_t           Value;                /*     0     4 */
+		} DW0;                                           /*     0     4 */
+		union {
+			struct {
+				uint32_t   Avc:2;                /*     4: 0  4 */
+				uint32_t   Reserved34:30;        /*     4: 2  4 */
+			} Obj0;                                  /*     4     4 */
+			struct {
+				uint32_t   Mpeg2:2;              /*     4: 0  4 */
+				uint32_t   Reserved34:30;        /*     4: 2  4 */
+			} Obj1;                                  /*     4     4 */
+			struct {
+				uint32_t   Jpeg:2;               /*     4: 0  4 */
+				uint32_t   Reserved34:30;        /*     4: 2  4 */
+			} Obj2;                                  /*     4     4 */
+			uint32_t           Value;                /*     4     4 */
+		} DW1;                                           /*     4     4 */
+		uint32_t                   ForwardQuantizerMatrix[16]; /*     8    64 */
+		void MFX_QM_STATE_CMD(class MFX_QM_STATE_CMD *);
+
+
+		/* Bitfield combined with previous fields */
+
+		static const size_t               dwSize = 18;   /*     0     0 */
+		static const size_t               byteSize = 72; /*     0     0 */
+
+		/* size: 72, cachelines: 2, members: 3, static members: 2 */
+		/* last cacheline: 8 bytes */
+	};
