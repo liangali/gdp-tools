@@ -1,0 +1,4 @@
+
+cd /home/fresh/data/media_driver_code/source/pahole/build
+
+./pahole /home/fresh/data/media_driver_code/build/media/media_driver/CMakeFiles/iHD_drv_video_OBJ.dir/agnostic/gen9_skl/hw/vdbox/mhw_vdbox_mfx_hwcmd_g9_skl.cpp.o
