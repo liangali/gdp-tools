@@ -26,7 +26,7 @@ for DWord in root.iter('DWord'):
             lo = int(DWord.get('Name').split('..')[0])
             hi = int(DWord.get('Name').split('..')[1])
             name = 'DW%s'%DWord.get('Name').replace('..', '_')
-            out_txt.append('        ("%s", c_uint32*%d)'%(name, hi-lo+1))
+            out_txt.append('        ("%s", c_uint32*%d), '%(name, hi-lo+1))
             pass
         else:
             bit_len = 0
@@ -45,11 +45,11 @@ for DWord in root.iter('DWord'):
             name = BitField.get('Name').replace(' ', '_')
             for s in removed_str:
                 name = name.replace(s, '')
-            out_txt.append('        ("%s", c_uint32, %d)'%(name, bit_len))
+            out_txt.append('        ("%s", c_uint32, %d), '%(name, bit_len))
             pass
 
 out_txt.append('    ]\n')
-with open('out.py', 'wt') as f:
+with open('cmdout.py', 'wt') as f:
     f.writelines('\n'.join(out_txt))
 
 print('done')
